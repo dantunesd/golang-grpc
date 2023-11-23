@@ -1,0 +1,16 @@
+syntax = "proto3";
+
+option go_package = "../helloworld";
+
+service HelloWorld {
+    rpc SayHello (Request) returns (Response);
+    rpc ChatSayHello (stream Request) returns (stream Response);
+}
+
+message Request {
+    string message = 1;
+}
+
+message Response {
+    string message = 2;
+}
